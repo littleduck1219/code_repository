@@ -12,6 +12,7 @@ class Voc_to_yolo_convter():
         self.xml_path_list = glob.glob(os.path.join(xml_path, "*.xml"))
         # print(self.xml_path_list)
 
+    # 이미지 박스 확인
     def cavt_xyxy_show(self, xtl, ytl, xbr, ybr, label, image_name):
         image_path = os.path.join("./data/images", image_name)
         image = cv2.imread(image_path)
@@ -31,11 +32,10 @@ class Voc_to_yolo_convter():
             yolo_format = []
             meta = root.findall("image")
             for image in meta:
-                image_name = image.attrib["name"]
-                image_width = int(image.attrib["width"])
-                image_height = int(image.attrib["height"])
-                print(image_name)
-                # print(image_width, image_height)
+                image_name = image.attrib["name"]  # 파일이름
+                image_width = int(image.attrib["width"])  # width
+                image_height = int(image.attrib["height"])  # height
+                # print(image_name, image_width, image_height)
 
                 # object_meta
                 object_metas = image.findall("box")
