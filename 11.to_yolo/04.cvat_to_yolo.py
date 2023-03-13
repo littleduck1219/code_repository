@@ -30,7 +30,7 @@ class Voc_to_yolo_convter():
 
             # image_meta
             yolo_format = []
-            meta = root.findall("image")
+            meta = root.findall("05.image")
             for image in meta:
                 image_name = image.attrib["name"]  # 파일이름
                 image_width = int(image.attrib["width"])  # width

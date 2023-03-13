@@ -13,7 +13,7 @@ model.conf = 0.5 # NMS confidence threshold
 model.iou = 0.45 # NMS IoU threshold
 model.to(device)
 
-# image loader
+# 05.image loader
 image_dir = "./dataset/test/images/"
 image_path = glob.glob(os.path.join(image_dir, "*.jpg"))
 label_dict = {0:"big bus", 1:"big truck", 2:"bus-l-", 3:"bus-s-",4:"car",
@@ -38,20 +38,20 @@ for img_path in image_path :
     # Results
     bbox = results.xyxy[0]
 
-    # image name
+    # 05.image name
     image_name = os.path.basename(img_path)
 
-    # image w h
+    # 05.image w h
     h, w, c = img.shape
 
     # xml fix code
-    # <image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c479e.jpg" width="640" height="480">
-    xml_frame = ET.SubElement(root, "image" , id="%d"%seen_count, name=image_name,
+    # <05.image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c479e.jpg" width="640" height="480">
+    xml_frame = ET.SubElement(root, "05.image" , id="%d"%seen_count, name=image_name,
                               width="%d"%w, height="%d"%h)
     """
     <annotations>
-        <image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c479e.jpg" width="640" height="480">
-        </image>
+        <05.image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c479e.jpg" width="640" height="480">
+        </05.image>
     </annotations>
     """
 
@@ -61,18 +61,18 @@ for img_path in image_path :
         # box
         """
         <annotations>
-            <image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c479e.jpg" width="640" height="480">
+            <05.image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c479e.jpg" width="640" height="480">
                 <box></box>
                 <box></box>
                 <box></box>
                 <box></box>
-            </image>
-            <image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c43249e.jpg" width="640" height="480">
+            </05.image>
+            <05.image id="0" name="adit_mp4-1002_jpg.rf.5e4018e963af1251b3f7e6fd487c43249e.jpg" width="640" height="480">
                 <box></box>
                 <box></box>
                 <box></box>
                 <box></box>
-            </image>
+            </05.image>
         </annotations>
         """
         x1 = box[0].item()

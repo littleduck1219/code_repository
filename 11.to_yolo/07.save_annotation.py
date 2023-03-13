@@ -39,7 +39,7 @@ for img_path in image_path:
     image_name = os.path.basename(img_path)
 
     h, w, c = img.shape
-    xml_frame = ET.SubElement(root, "image", id="%d" % seen_count, name=image_name,
+    xml_frame = ET.SubElement(root, "05.image", id="%d" % seen_count, name=image_name,
                               width="%d" % w, height="%d" % h)
 
     for box in bbox:

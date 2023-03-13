@@ -17,7 +17,7 @@ class Voc_to_yolo_convter() :
             file_name = root.find('filename').text
             print(file_name)
 
-            # get image size
+            # get 05.image size
             size_meta = root.findall('size')
             img_width = int(size_meta[0].find('width').text)
             img_height = int(size_meta[0].find('height').text)

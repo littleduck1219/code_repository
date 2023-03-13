@@ -32,9 +32,9 @@ label_dict = {"big bus" : 0 , "big truck" : 1 , "bus-l-":2, "bus-s-":3, "car":4,
 for xml_path in xml_paths :
     tree = parse(xml_path)
     root = tree.getroot()
-    img_metas = root.findall("image")
+    img_metas = root.findall("05.image")
     for img_meta in img_metas :
-        # 02.voc_to_yolo image name
+        # 02.voc_to_yolo 05.image name
         image_name = img_meta.attrib["name"]
         # print(image_name)
         # image_name >> aditganteng_mp4-165_jpg.rf.976ae8b8ed6d79aab3f9566dba1f4645.jpg
